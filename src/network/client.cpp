@@ -18,6 +18,10 @@ Networking::Client::Client(Equipment::Side side, u_int8_t mac[6])
     esp_now_register_send_cb(on_data_send); // register callback for sending
 }
 
+void Networking::Client::sync()
+{
+}
+
 void Networking::Client::test_connection() {
     // CLIENT DATA SHOUDL BE TEST DATA, NOT Networking::Data data;
     Networking::SyncData data;

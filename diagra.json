@@ -73,7 +73,9 @@
       "top": 176.75,
       "left": -96,
       "attrs": { "value": "10000" }
-    }
+    },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": -154.95, "left": 7.82, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": 278.4, "left": -9.6, "attrs": {} }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
@@ -96,7 +98,10 @@
     [ "esp:32", "led2:A", "green", [ "h0" ] ],
     [ "esp:33", "led4:A", "#8f4814", [ "h-119.81" ] ],
     [ "esp:25", "led1:A", "red", [ "v0", "h-62.21", "v-67.2", "h-19.2" ] ],
-    [ "led3:A", "esp:26", "#8f4814", [ "v28.8", "h67.2", "v67.2" ] ]
+    [ "led3:A", "esp:26", "#8f4814", [ "v28.8", "h67.2", "v67.2" ] ],
+    [ "ir1:GND", "esp:GND.1", "black", [ "v9.6", "h-96", "v38.4" ] ],
+    [ "ir1:VCC", "esp:3V3", "red", [ "v9.6", "h-96", "v86.4" ] ],
+    [ "esp:34", "ir1:DAT", "green", [ "h-33.41", "v-96", "h86.4", "v9.6", "h-9.6", "v-9.6" ] ]
   ],
   "dependencies": {}
 }

@@ -1,28 +1,12 @@
 #pragma once
 #include "esp_now.h"
-#include "network.h"
+// #include "network.h"
+#include "client.h"
 
 #define ENABLE_ENCRYPTION 0
 #define PAYLOAD_BUFFER_SIZE 4
 
 namespace Networking {
-    enum SignalType {
-        GROUND,
-        POINT
-    };
-
-    typedef struct Data {
-        Equipment::Side side;
-        SignalType signal_type;
-        uint16_t relative_timestamp;
-    } Data;
-
-    typedef struct Payload {
-        uint8_t mac[6];
-        Data data;
-        uint8_t len;
-    } Payload;
-
     class Server {
         private:
             Equipment::Machine* machine;

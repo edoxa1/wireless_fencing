@@ -17,7 +17,7 @@ static int8_t pointer = 0;
 static bool in_sparring_mode = false;
 
 // IR sensor: TODO: IMPLEMENT
-define IR_PIN
+#define IR_PIN 10
 
 // GyverSettings:
 #include <SettingsESP.h>
@@ -134,10 +134,10 @@ void build(sets::Builder& b) {
     if (b.beginMenu("Testing")) {
         if (b.beginRow()) {
             if (b.Button("Test LHS")) {
-                machine.point(Equipment::Side::LHS);
+                machine.point(Equipment::Side::LHS, 0);
             }
             if (b.Button("Test RHS")) {
-                machine.point(Equipment::Side::RHS);
+                machine.point(Equipment::Side::RHS, 0);
             }
         } 
         b.endRow();
